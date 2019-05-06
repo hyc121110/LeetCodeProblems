@@ -1,3 +1,9 @@
+'''
+Given an array A of integers, we must modify the array in the following way: we choose an i and replace A[i] with -A[i], and we repeat this process K times in total.  (We may choose the same index i multiple times.)
+
+Return the largest possible sum of the array after modifying it in this way.
+'''
+
 # choose largest negative number by sorting
 
 def largestSumAfterKNegations(A, K):
@@ -7,6 +13,7 @@ def largestSumAfterKNegations(A, K):
     #     A[min_idx] = -A[min_idx]
     #     K -= 1
     # return sum(A)
+    
     # method 2: sort first
     A.sort()
     i = 0

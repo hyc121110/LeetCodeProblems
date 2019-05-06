@@ -1,3 +1,7 @@
+'''
+Find the longest sequence of '1' in an array with maximum k times to change from 0 to 1
+'''
+
 def longestOnes(A, K):
     i = 0
     for j in range(len(A)):

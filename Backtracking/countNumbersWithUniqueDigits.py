@@ -1,3 +1,7 @@
+'''
+Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x < 10^n.
+'''
+
 def uniqueDigits(n):
     if n == 0: return 1
     # base case with n = 1
@@ -12,5 +16,4 @@ def uniqueDigits(n):
         n -= 1
     return res
         
-    
 print(uniqueDigits(n=2))

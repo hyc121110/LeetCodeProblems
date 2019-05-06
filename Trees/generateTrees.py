@@ -1,3 +1,7 @@
+'''
+Given an integer n, generate all structurally unique BST's (binary search trees) that store values 1 ... n.
+'''
+
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, x):

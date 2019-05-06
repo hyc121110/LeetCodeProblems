@@ -1,3 +1,7 @@
+'''
+Given a string, find the length of the longest substring without repeating characters.
+'''
+
 def lengthOfLongestSubstring(s):
     # 2 pointers: pointer scan from left to right, pointer record first
     # character 
@@ -19,4 +23,4 @@ def lengthOfLongestSubstring(s):
     
     return max_length
 
-print(lengthOfLongestSubstring(s="dddggwetw"))
+print(lengthOfLongestSubstring(s="abcabcbb")) # ans = 3
