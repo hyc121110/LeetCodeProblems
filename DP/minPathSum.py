@@ -31,4 +31,6 @@ def minPathSum(grid):
 
     return arr[m-1][n-1]
 
-print(minPathSum(grid=[]))
+print(minPathSum(grid=[[4,3,4,10],
+                        [3,6,7,1],
+                        [7,4,1,8]]))
