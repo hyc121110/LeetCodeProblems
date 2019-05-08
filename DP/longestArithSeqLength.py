@@ -16,4 +16,5 @@ def longestArithSeqLength(A):
             # store (index, difference) as key
             diff[j, A[j] - A[i]] = diff.get((i, A[j] - A[i]), 1) + 1
     return max(diff.values())
+    
 print(longestArithSeqLength(A=[20,1,15,3,10,5,8]))
