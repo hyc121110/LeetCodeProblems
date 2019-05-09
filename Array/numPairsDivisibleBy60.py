@@ -7,6 +7,7 @@ Return the number of pairs of songs for which their total duration in
 '''
 
 from collections import Counter
+from collections import defaultdict
 
 def numPairsDivisibleBy60(time):
     # naive solution (very slow)
@@ -26,7 +27,7 @@ def numPairsDivisibleBy60(time):
     # return count
 
     # faster solution
-    dic = collections.defaultdict(int)
+    dic = defaultdict(int)
     for i in time:
         dic[i%60] += 1
     
