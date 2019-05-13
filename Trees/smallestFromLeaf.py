@@ -14,6 +14,7 @@ class TreeNode:
         self.right = None
 
 def smallestFromLeaf(root):
+    res = [str(chr(ord('z') + 1))]
     def dfs(node, path):
         if not node: return
         path.append(chr(ord('a')+node.val))
@@ -24,6 +25,5 @@ def smallestFromLeaf(root):
             dfs(node.right, path)
         path.pop()
     
-    res = [str(chr(ord('z') + 1))]
     dfs(root, [])
     return res[0]
