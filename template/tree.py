@@ -11,28 +11,42 @@ class Solution:
   def function(tree):
     pass
 
-def stringToIntegerList(lst):
+def stringToTreeNode(input):
+  input = input.strip()
+  input = input[1:-1]
+  if not input:
+    return None
+
+  inputValues = [s.strip() for s in input.split(',')]
+  root = TreeNode(int(inputValues[0]))
+  nodeQueue = [root]
+  front = 0
+  index = 1
+  while index < len(inputValues):
+    node = nodeQueue[front]
+    front = front + 1
+
+    item = inputValues[index]
+    index = index + 1
+    if item != "null":
+      leftNumber = int(item)
+      node.left = TreeNode(leftNumber)
+      nodeQueue.append(node.left)
+
+    if index >= len(inputValues):
+      break
+
+    item = inputValues[index]
+    index = index + 1
+    if item != "null":
+      rightNumber = int(item)
+      node.right = TreeNode(rightNumber)
+      nodeQueue.append(node.right)
+  return root
+
+def integerListToString(nums, len_of_list=None):
   lst = ast.literal_eval(lst)
-  return list(map(int, lst))
-
-def treeNodeToString(root):
-  if not root:
-    return "[]"
-  output = ""
-  queue = [root]
-  current = 0
-  while current != len(queue):
-    node = queue[current]
-    current = current + 1
-
-    if not node:
-      output += "null, "
-      continue
-
-    output += str(node.val) + ", "
-    queue.append(node.left)
-    queue.append(node.right)
-  return "[" + output[:-2] + "]"
+  return list(map(str, lst))
 
 def main():
   import sys
@@ -45,15 +59,14 @@ def main():
   while True:
     try:
       line = next(lines)
-      tree = stringToIntegerList(line);
-      # line = next(lines)
-      # inorder = stringToIntegerList(line);
+      root = stringToTreeNode(line);
       
-      ret = Solution().function(tree)
+      ret = Solution().function(root)
 
-      out = treeNodeToString(ret);
+      out = integerListToString(ret);
       print(out)
     except StopIteration:
       break
 
 if __name__ == '__main__':
+  main()
