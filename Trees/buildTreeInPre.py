@@ -1,3 +1,10 @@
+'''
+Given preorder and inorder traversal of a tree, construct the binary tree.
+
+Note:
+You may assume that duplicates do not exist in the tree.
+'''
+
 import ast
 
 # Definition for a binary tree node.
@@ -8,7 +15,7 @@ class TreeNode:
         self.right = None
 
 class Solution:
-  def buildTree(self, preorder, inorder):
+  def buildTreeInPre(self, preorder, inorder):
     def build(stop):
       # make sure inorder is not empty and stop traversing when found 
       if inorder and inorder[-1] != stop:
@@ -65,7 +72,7 @@ def main():
       line = next(lines)
       inorder = stringToIntegerList(line);
       
-      ret = Solution().buildTree(preorder, inorder)
+      ret = Solution().buildTreeInPre(preorder, inorder)
 
       out = treeNodeToString(ret);
       print(out)
