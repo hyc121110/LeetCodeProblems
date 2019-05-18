@@ -17,7 +17,7 @@ class TreeNode:
 class Solution:
   def buildTreeInPre(self, preorder, inorder):
     def build(stop):
-      # make sure inorder is not empty and stop traversing when found 
+      # make sure inorder is not empty and stop traversing when found in inorder
       if inorder and inorder[-1] != stop:
         # set current root as the last element of the preorder list
         root = TreeNode(preorder.pop())
