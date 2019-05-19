@@ -4,7 +4,7 @@ You are a professional robber planning to rob houses along a street. Each house 
 Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.
 '''
 
-def rob(nums):
+def rob1(nums):
   # relation: rob(i) = max(rob(i-2) + cur_val, rob(i-1))
 
   # method 1: recursive (top-down) (slow)
@@ -37,4 +37,4 @@ def rob(nums):
   #   prev2 = tmp
   # return prev1
 
-print(rob(nums=[1,2,3,4,5]))
+print(rob1(nums=[1,2,3,4,5]))
