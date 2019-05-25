@@ -6,7 +6,7 @@ def canParititon(nums):
     # initialize set to 0
     cur = {0}
     for i in nums:
-      # perform union operation (|) with rhs to add 
+      # perform union operation (|) with rhs to add i + x to the set
       cur |= {i + x for x in cur}
       if target in cur:
         return True
