@@ -1,3 +1,7 @@
+'''
+Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.
+'''
+
 def canParititon(nums):
   # continue if sum of nums is even
   if sum(nums) & 1 == 0:
