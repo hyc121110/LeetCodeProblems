@@ -12,12 +12,14 @@ def maxSumAfterPartitioning(A, K):
   # iterate through the list
   for i in range(N):
     cur_max = 0
-    # iterate the previous k or i+1 values depends which is smaller and also itself
+    # k is the size of the subarray
+    # if k < i+1, size would be i+1 instead
     for k in range(1, min(K, i+1) + 1):
       # the maximum value in the subarray
       cur_max = max(cur_max, A[i - k + 1])
       # if i < k: dp[i-k] = 0 -> only equal to cur_max*k
       # compare with different k to see which sum is the largest
+      # e.g. dp[3-1] + cur_max * 1
       dp[i] = max(dp[i], dp[i - k] + cur_max * k)
   return dp[N-1]
 
