@@ -27,14 +27,14 @@ def reverseList(head):
   return prev
 
   # recursion
-  def _reverse(node, prev=None):
-    if not node:
-      return prev
-    n = node.next
-    node.next = prev
-    return _reverse(n, node)
+  # def _reverse(node, prev=None):
+  #   if not node:
+  #     return prev
+  #   n = node.next
+  #   node.next = prev
+  #   return _reverse(n, node)
   
-  return _reverse(head)
+  # return _reverse(head)
 
 
 
