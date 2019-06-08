@@ -13,6 +13,7 @@ def reverseList(head):
   # iterative
   # two pointers: cur, prev
   prev = None
+  # cur = None
 
   while head:
     # 1st set cur to head
@@ -23,6 +24,7 @@ def reverseList(head):
     head = head.next
     cur.next = prev
     prev = cur
+    # cur, head, cur.next, prev = head, head.next, prev, cur
 
   return prev
 
