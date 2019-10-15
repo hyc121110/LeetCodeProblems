@@ -4,6 +4,7 @@ Given n non-negative integers a1, a2, ..., an , where each represents a point at
 Note: You may not slant the container and n is at least 2.
 '''
 
+
 def maxArea(height):
   # inititalize them to first and last line
   i, j = 0, len(height) - 1
