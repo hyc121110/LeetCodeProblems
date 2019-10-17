@@ -26,4 +26,4 @@ def sortColors(nums):
       nums[white], nums[blue] = nums[blue], nums[white]
       blue -= 1
 
-sortColors([2,0,2,1,1,0])
+sortColors([1,1,2,0,2,1,1,0])
