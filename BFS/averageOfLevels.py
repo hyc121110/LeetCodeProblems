@@ -21,7 +21,7 @@ class Solution:
             n = len(this_level)
             _sum = 0 # initialize the sum of the current level
             
-            for i in range(n): # current level iteration
+            for _ in range(n): # current level iteration
                 node = this_level.pop(0)
                 _sum += node.val
                 
@@ -34,4 +34,5 @@ class Solution:
                 
         return ret
         
-        
+# Time Complexity : O(N), where N is the number of nodes in the given Tree.
+# Space Complexity : O(M), where M is the maximum number of nodes at any level in the binary tree.
