@@ -32,3 +32,5 @@ class Solution:
         # for the remain words in the set, add 1 to the current length of the word, representing #
         return sum(len(word) + 1 for word in _set)
         
+# Time complexity: O(n * m), n is the size of the words array and m is the length of the word in the iteration
+# Space complexity: O(n), n is the size of the words array
