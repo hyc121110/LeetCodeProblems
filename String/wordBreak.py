@@ -6,6 +6,25 @@ Note:
 -You may assume the dictionary does not contain duplicate words.
 '''
 
+"""
+The idea is the following:
+
+d is an array that contains booleans
+
+d[i] is True if there is a word in the dictionary that ends at ith index of s AND d is also True at the beginning of the word
+
+Example:
+
+s = "leetcode"
+
+words = ["leet", "code"]
+
+d[3] is True because there is "leet" in the dictionary that ends at 3rd index of "leetcode"
+
+d[7] is True because there is "code" in the dictionary that ends at the 7th index of "leetcode" AND d[3] is True
+
+The result is the last index of d.
+"""
 def wordBreak(s, wordDict):
     d = [False] * len(s)
     for i in range(len(s)):
@@ -19,3 +38,19 @@ def wordBreak(s, wordDict):
 s = "catsandog"
 wordDict = ["cats", "dog", "sand", "and", "cat"]
 print(wordBreak(s, wordDict))
+
+# adding one element for better optimization
+def wordBreak2(self, s: str, wordDict: List[str]) -> bool:
+    dp = [False] * (len(s)+1)
+    dp[0] = True
+    
+    for i in range(1,len(s)+1):
+        for word in wordDict:
+            l = i - len(word)
+            r = i
+            
+            if word == s[l:r] and dp[l]:
+                dp[i] = True
+                break
+                
+    return dp[-1]
